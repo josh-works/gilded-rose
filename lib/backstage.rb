@@ -1,9 +1,5 @@
-class Backstage
-  attr_reader :quality, :days_remaining
-  def initialize(quality, days_remaining)
-    @quality, @days_remaining = quality, days_remaining
-  end
-
+require 'item'
+class Backstage < Item
   def tick
     @days_remaining -= 1
     return if @quality >= 50
