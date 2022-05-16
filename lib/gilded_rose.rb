@@ -2,13 +2,15 @@ require 'normal'
 require 'item'
 require 'brie'
 require 'backstage'
+require 'mana'
 module GildedRose
 
   DEFAULT_CLASS = Item
   SPECIALIZED_CLASSES = {
     'Normal Item' => Normal,
     'Aged Brie' =>  Brie,
-    'Backstage passes to a TAFKAL80ETC concert' => Backstage
+    'Backstage passes to a TAFKAL80ETC concert' => Backstage,
+    'Conjured Mana Cake' => Mana
   }
   def self.for(name:, days_remaining:, quality:)
     (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS).new(quality, days_remaining)
