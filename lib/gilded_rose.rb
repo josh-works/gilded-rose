@@ -1,7 +1,3 @@
-require 'normal'
-require 'brie'
-require 'sulfuras'
-require 'backstage'
 module GildedRose
   def self.for(name:, days_remaining:, quality:)
     @item = klass_for(name).new(quality, days_remaining)

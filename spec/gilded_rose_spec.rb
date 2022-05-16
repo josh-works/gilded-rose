@@ -1,7 +1,5 @@
 require "spec_helper"
 
-require_relative "../lib/gilded_rose"
-
 RSpec.describe GildedRose do
   context "Normal Item" do
     it "before sell date" do

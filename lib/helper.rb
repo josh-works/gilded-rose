@@ -1,0 +1,6 @@
+require './lib/gilded_rose'
+require './lib/normal'
+require './lib/item'
+require './lib/brie'
+require './lib/backstage'
+require './lib/sulfuras'
