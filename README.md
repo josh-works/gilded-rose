@@ -48,4 +48,12 @@ Got a lot more of this refactor done. Pushing into "extract configuration" patte
 
 aaand I did it. I got to the end of the refactor. I followed along with her pretty closely, had to debug a few times, next time I'll `git reset --hard HEAD` and speed-run this. Wherever I get stuck will be where I'll start copying down code in my notebook.
 
-I'm super excited. 
+I'm super excited.
+
+----------
+
+Took a walk, grabbed a beer, lets refactor this from scratch:
+
+```
+git reset --hard HEAD 
+```
