@@ -1,9 +1,5 @@
-class Sulfuras
-  attr_reader :quality, :days_remaining
-  def initialize(quality, days_remaining)
-    @quality, @days_remaining = quality, days_remaining
-  end
-
+require 'item'
+class Sulfuras < Item
   def tick
   end
 end
