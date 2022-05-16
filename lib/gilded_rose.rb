@@ -1,5 +1,6 @@
 require 'normal'
 require 'brie'
+require 'sulfuras'
 class GildedRose
   attr_reader :name, :days_remaining, :quality
 
@@ -42,7 +43,10 @@ class GildedRose
     @item.tick
   end
 
-  def sulfuras_tick; end
+  def sulfuras_tick
+    @item = Sulfuras.new(@quality, @days_remaining)
+    @item.tick
+  end
 
   def backstage_tick
     @days_remaining -= 1
