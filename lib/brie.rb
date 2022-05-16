@@ -1,9 +1,5 @@
-class Brie
-  attr_reader :days_remaining, :quality
-  def initialize(quality, days_remaining)
-    @quality, @days_remaining = quality, days_remaining
-  end
-
+require 'item'
+class Brie < Item
   def tick
     @days_remaining -= 1
     return if @quality >= 50
