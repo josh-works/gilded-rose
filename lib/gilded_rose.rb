@@ -1,6 +1,16 @@
+require 'item'
+require 'normal'
+require 'brie'
+require 'backstage'
 class GildedRose
+  DEFAULT_CLASS = Item
+  SPECIALIZED_CLASSES = {
+    'Normal Item' => Normal,
+    'Aged Brie' => Brie,
+    'Sulfuras, Hand of Ragnaros' => Item,
+    'Backstage passes to a TAFKAL80ETC concert' => Backstage }
   def initialize(name:, days_remaining:, quality:)
-    @item = klass_for(name).new(days_remaining, quality)
+    @item = (SPECIALIZED_CLASSES[name] || DEFAULT_CLASS).new(days_remaining, quality)
   end
 
   def days_remaining
@@ -13,18 +23,5 @@ class GildedRose
 
   def tick
     @item.tick
-  end
-
-  def klass_for(name)
-    case name
-    when 'Normal Item'
-      Normal
-    when 'Aged Brie'
-      Brie
-    when 'Sulfuras, Hand of Ragnaros'
-      Item
-    when 'Backstage passes to a TAFKAL80ETC concert'
-      Backstage
-    end
   end
 end
