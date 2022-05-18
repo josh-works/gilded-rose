@@ -1,6 +1,6 @@
 require "spec_helper"
 
-require_relative "../lib/gilded_rose"
+require_relative "../lib/helper"
 
 RSpec.describe GildedRose do
   context "Normal Item" do

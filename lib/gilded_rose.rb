@@ -7,49 +7,47 @@ class GildedRose
     @quality = quality
   end
 
+  def days_remaining
+    return @item.days_remaining if @item
+    @days_remaining
+  end
+
+  def quality
+    return @item.quality if @item
+    @quality
+  end
+
+  def normal_tick
+    @item = Normal.new(@days_remaining, @quality)
+    @item.tick
+  end
+
+  def brie_tick
+    @item = Brie.new(@days_remaining, @quality)
+    @item.tick
+  end
+
+  def sulfuras_tick
+    @item = Sulfuras.new(@days_remaining, @quality)
+    @item.tick
+  end
+
+  def backstage_tick
+    @item = Backstage.new(@days_remaining, @quality)
+    @item.tick
+  end
+
+
   def tick
-    if @name != "Aged Brie" and @name != "Backstage passes to a TAFKAL80ETC concert"
-      if @quality > 0
-        if @name != "Sulfuras, Hand of Ragnaros"
-          @quality = @quality - 1
-        end
-      end
-    else
-      if @quality < 50
-        @quality = @quality + 1
-        if @name == "Backstage passes to a TAFKAL80ETC concert"
-          if @days_remaining < 11
-            if @quality < 50
-              @quality = @quality + 1
-            end
-          end
-          if @days_remaining < 6
-            if @quality < 50
-              @quality = @quality + 1
-            end
-          end
-        end
-      end
-    end
-    if @name != "Sulfuras, Hand of Ragnaros"
-      @days_remaining = @days_remaining - 1
-    end
-    if @days_remaining < 0
-      if @name != "Aged Brie"
-        if @name != "Backstage passes to a TAFKAL80ETC concert"
-          if @quality > 0
-            if @name != "Sulfuras, Hand of Ragnaros"
-              @quality = @quality - 1
-            end
-          end
-        else
-          @quality = @quality - @quality
-        end
-      else
-        if @quality < 50
-          @quality = @quality + 1
-        end
-      end
+    case @name
+    when 'Normal Item'
+      return normal_tick
+    when 'Aged Brie'
+      return brie_tick
+    when 'Sulfuras'
+      return sulfuras_tick
+    when 'Backstage passes to a TAFKAL80ETC concert'
+      return backstage_tick
     end
   end
 end
