@@ -1,5 +1,5 @@
-require 'tick'
-class Normal < Tick
+require 'item'
+class Normal < Item
   def tick
     @days_remaining -= 1
     return if @quality <= 0

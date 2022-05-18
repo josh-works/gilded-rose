@@ -1,6 +1,5 @@
 require 'gilded_rose'
 require 'normal'
 require 'brie'
-require 'sulfuras'
 require 'backstage'
-require 'tick'
+require 'item'

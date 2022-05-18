@@ -22,7 +22,7 @@ class GildedRose
     when 'Aged Brie'
       Brie
     when 'Sulfuras, Hand of Ragnaros'
-      Sulfuras
+      Item
     when 'Backstage passes to a TAFKAL80ETC concert'
       Backstage
     end
